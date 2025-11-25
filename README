@@ -1,0 +1,59 @@
+Simple Diffusion Model
+
+A lightweight Diffusion Model for generating MNIST digit images using a U-Net architecture.
+
+About The Project :
+
+This project implements a minimal Diffusion Model capable of generating new handwritten digits (0–9).
+The model is built using a U-Net backbone, sinusoidal time embeddings, and classifier-free guidance for better controlled generation.
+You can also specify which digit the model should generate.
+
+Note: MNIST is a simple dataset, so generated images are decent but not high-quality. Better datasets will produce stronger results.
+
+Technologies Used :
+
+Python
+PyTorch
+torchvision
+tqdm
+
+How to Run
+1. Install dependencies
+pip install torch torchvision tqdm
+
+2. Run training
+python train_diffusion.py
+
+3. Outputs
+
+Model checkpoints:
+diffusion_model_epoch_X.pth
+
+Generated samples per epoch:
+generated_images_epoch_X.png
+
+Features :
+
+Simple and modular U-Net
+Sinusoidal time embedding
+Class-conditional generation (digits 0–9)
+Classifier-Free Guidance
+Cosine beta schedule
+Clean and beginner-friendly code structure
+Example: Generate a specific digit
+(Example digit = 7)
+
+images = diffusion.sample(
+    n_samples=10,
+    size=(1, 28, 28),
+    device=device,
+    guide_w=2.0
+)
+
+Dataset :
+
+MNIST — 28×28 handwritten digit dataset
+
+Created by:
+
+Matthew :)
